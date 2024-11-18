@@ -3,11 +3,11 @@ const authLinks = document.getElementById('authLinks');
         const usernameInput = document.getElementById('username');
         const passwordInput = document.getElementById('password');
 
-        // Mock user data
-        const users = {
-            'user1': 'password1',
-            'user2': 'password2'
-        };
+// Mock user data
+const users = {
+    'akhmetovislam2005@gmail.com': 'kindking009'
+};
+
 
         // Handle login
         document.getElementById('loginForm').addEventListener('submit', function(event) {
