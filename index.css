@@ -28,6 +28,7 @@ body {
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и текста */
 }
 
 .background-animation {
@@ -44,7 +45,8 @@ body {
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    animation: float 15s infinite;
+    animation: float 10s infinite;
+    will-change: transform; /* Предупреждение браузера о предстоящих изменениях */
 }
 
 .circle:nth-child(1) {
@@ -74,6 +76,7 @@ body {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
     padding: 1rem 2rem;
+    transition: background 0.3s ease; /* Плавный переход для фона */
 }
 
 .navbar-brand {
@@ -110,7 +113,6 @@ body {
     align-items: center;
     padding: 2rem 0;
     position: relative;
-    overflow: hidden;
 }
 
 .hero-content {
@@ -125,6 +127,7 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: font-size 0.3s ease; /* Плавное изменение размера шрифта */
 }
 
 .hero p {
@@ -135,20 +138,19 @@ body {
 .btn-custom {
     background: var(--primary-color);
     color: white;
-    padding: 1rem 2rem; /* Adjust padding */
-    border-radius: 50px; /* Rounded button */
+    padding: 1rem 2rem; /* Подкорректировано отступы */
+    border-radius: 50px; /* Округлая кнопка */
     border: none;
-    font-weight: 600; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 1px; /* Letter spacing */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+    font-weight: 600; /* Жирный текст */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    letter-spacing: 1px; /* Пробелы между буквами */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для трансформации и тени */
 }
 
 .btn-custom:hover {
-    transform: translateY(-5px); /* Lift the button on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow for hover effect */
+    transform: translateY(-5px); /* Подъем кнопки при наведении */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Тень при наведении */
 }
-
 
 .glass-card {
     background: var(--glass-bg);
@@ -157,11 +159,11 @@ body {
     border-radius: 20px;
     padding: 2rem;
     margin: 1rem 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Плавное перемещение */
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Эффект при наведении */
 }
 
 .features {
@@ -189,6 +191,11 @@ body {
     justify-content: center;
     cursor: pointer;
     z-index: 1000;
+    transition: transform 0.3s ease; /* Плавное изменение для кнопки */
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1); /* Легкое увеличение при наведении */
 }
 
 .theme-toggle i {
@@ -300,21 +307,16 @@ body {
     text-align: center;
 }
 
-.btn-custom {
-    background: var(--primary-color); /* Use the primary color */
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem; /* Adjust padding to match .btn-book */
-    border-radius: 50px; /* Make the button more rounded */
-    font-weight: 600; /* Add font weight */
-    font-size: 16px; /* Retain the original font size */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Apply smooth transitions */
-}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
 
-.btn-custom:hover {
-    transform: scale(1.05); /* Add a slight scale effect on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
-    background-color: var(--primary-color); /* Ensure the background stays the same on hover */
-}
+    .btn-custom {
+        padding: 0.8rem 1.5rem;
+    }
 
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
